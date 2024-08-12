@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lebenslauf - Davor Andrijasevic</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="C:\Users\daan3\OneDrive - AMAG\Schulaufgaben\Grundlagen Web Programmierung\ProjectCV\scipt.js"></script>
 </head>
 <body>
     <div class="container">
         <aside class="sidebar">
             <h1>Davor Andrijasevic</h1>
-            <ul class="contact-info">
-                <li><span>📞</span> 076 306 03 12</li>
-                <li><span>📧</span> <a href="mailto:d.andrijasevic95@gmail.com">d.andrijasevic95@gmail.com</a></li>
-                <li><span>🏠</span> Wegacker 1, 4553 Subingen</li>
-            </ul>
+            <!--<ul class="contact-info">-->
+                <p><span>📞</span> +41 76 306 03 12</p>
+                <p><span>📧</span> <a href="mailto:d.andrijasevic95@gmail.com">d.andrijasevic95@gmail.com</a></p>
+                <p><span>🏠</span> Lindenweg 8, 4528 Zuchwil</p>
+            <!--</ul>-->
             <section>
                 <h2>WEITERBILDUNG</h2>
                 <div class="section-content">
@@ -41,27 +42,27 @@
                 <h2>SPRACHEN</h2>
                 <ul class="languages">
                     <li>
-                        Deutsch 
+                        Deutsch
                         <div class="progress-bar">
-                            <div class="progress" style="width: 100%;"></div>
+                            <div class="progress" data-progress="100%"></div>
                         </div>
                     </li>
                     <li>
-                        Kroatisch 
+                        Kroatisch
                         <div class="progress-bar">
-                            <div class="progress" style="width: 95%;"></div>
+                            <div class="progress" data-progress="95%"></div>
                         </div>
                     </li>
                     <li>
-                        Englisch 
+                        Englisch
                         <div class="progress-bar">
-                            <div class="progress" style="width: 80%;"></div>
+                            <div class="progress" data-progress="85%"></div>
                         </div>
                     </li>
                     <li>
-                        Französisch 
+                        Französisch
                         <div class="progress-bar">
-                            <div class="progress" style="width: 40%;"></div>
+                            <div class="progress" data-progress="35%"></div>
                         </div>
                     </li>
                 </ul>
@@ -70,11 +71,21 @@
 
         <main class="content">
             <section>
+
                 <h2>BERUFSERFAHRUNG</h2>
+                <div class="job">
+                <h3>Web Frontend Developer</h3>
+                    <p>AMAG Automobil- und Motoren AG</p>
+                    <p>Aug. 2024 - Heute | Cham</p>
+                    <ul>
+                        <li>Entwicklung von Front End Web Applikationen</li>
+                        <li>Erstellen von Back End Source Code für die Applikationen</li>
+                        <li>Bearbeiten von Support Tickets, die die Softwareentwicklung betreffen</li>
+                    </ul>
                 <div class="job">
                     <h3>Automobilverkäufer Audi Neuwagen & Occasions</h3>
                     <p>AMAG Zuchwil</p>
-                    <p>Apr. 2022 – heute | Zuchwil</p>
+                    <p>Apr. 2022 – Jul. 2024 | Zuchwil</p>
                     <ul>
                         <li>Beratung und Verkauf von Audi Occasionen, Vorführ- und Neuwagen</li>
                         <li>Erfolgreiche Akquise von Privat- und Firmenkunden</li>
@@ -96,6 +107,20 @@
                         <li>Bestellung von Kunden- und Lagerfahrzeugen</li>
                         <li>Verkauf von Dienstleistungs- und Versicherungsprodukten, sowie auch Zubehör</li>
                     </ul>
+                </div>
+                    <h2>KONTAKTFORMULAR</h2>
+                        <form id="contactForm">
+                            <label for="firma">Firma:</label>
+                            <input type="text" id="firma" required><br><br>
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required><br><br>
+                            <label for="mail">E-Mail:</label>
+                            <input type="email" id="mail" name="email" required><br><br>
+                            <label for="message">Nachricht:</label>
+                            <textarea id="message" name="message" required></textarea>
+
+                            <button type="submit">Absenden</button>
+                        </form>
                 </div>
                 <!-- Weitere Berufserfahrungen hier einfügen -->
             </section>

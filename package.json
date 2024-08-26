@@ -1,0 +1,27 @@
+{
+  "name": "projectcv",
+  "version": "1.0.0",
+  "description": "Projektarbeit für den Kurs Grundlagen Web Programmierung",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Davor1995/ProjectCV.git"
+  },
+  "author": "Davor Andrijasevic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Davor1995/ProjectCV/issues"
+  },
+  "homepage": "https://github.com/Davor1995/ProjectCV#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.5.4",
+    "nodemailer": "^6.9.14"
+  }
+}

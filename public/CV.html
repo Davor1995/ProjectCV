@@ -112,17 +112,21 @@
                 </div>
                 <div class="contactForm">
                     <h2>KONTAKTFORMULAR</h2>
-                        <form id="contactForm">
-                            <label for="firma">Firma:</label>
-                            <input style="float:right" type="text" id="firma" required><br><br>
-                            <label for="name">Name:</label>
-                            <input style="float:right" type="text" id="name" name="name" required><br><br>
-                            <label for="mail">E-Mail:</label>
-                            <input style="float:right" type="email" id="mail" name="email" required><br><br>
-                            <label for="message">Nachricht:</label>
-                            <textarea style="float:right" id="message" name="message" required></textarea>
-                            <button style="float:right" type="submit" name="button1">Absenden</button>
-                        </form>
+                    <form id="contactForm" action="/send" method="POST">
+                        <label for="firma">Firma:</label>
+                        <input type="text" id="firma" name="firma" required><br><br>
+
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required><br><br>
+
+                        <label for="email">E-Mail:</label>
+                        <input type="email" id="email" name="email" required><br><br>
+
+                        <label for="message">Nachricht:</label>
+                        <textarea id="message" name="message" required></textarea><br><br>
+
+                        <button type="submit">Absenden</button>
+                    </form>
                 </div>
 
 

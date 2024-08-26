@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const nodemailer = require('nodemailer');
+require('dotenv').config(); // Nur für lokale Umgebungen
 
 const app = express();
 
@@ -11,34 +13,39 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'CV.html'));
 });
 
-app.listen(3000, () => {
-    console.log('Server is running on http://localhost:3000');
-});
-
-const nodemailer = require('nodemailer');
-require('dotenv').config(); // Nur für lokale Umgebungen
-
+// Nodemailer-Einstellungen
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: process.env.EMAIL_USER, // Greife auf die Umgebungsvariable zu
-        pass: process.env.EMAIL_PASS  // Greife auf das Passwort aus der Umgebungsvariable zu
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
     }
 });
 
-transporter.sendMail({
-    from: process.env.EMAIL_USER,
-    to: 'empfaenger@example.com',
-    subject: 'Test E-Mail',
-    text: 'Hallo! Das ist eine Test-E-Mail.'
-}, (error, info) => {
-    if (error) {
-        console.log('Error sending email:', error);
-    } else {
-        console.log('Email sent:', info.response);
-    }
+// Route für den Versand der E-Mail
+app.post('/send', (req, res) => {
+    const { name, email, message, firma } = req.body;
+
+    const mailOptions = {
+        from: process.env.EMAIL_USER,
+        to: 'empfaenger@example.com',
+        subject: `Neue Nachricht von ${name}`,
+        text: `Firma: ${firma}\nName: ${name}\nEmail: ${email}\nNachricht: ${message}`
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.log('Error sending email:', error);
+            res.status(500).send('<h1>Fehler beim Senden der E-Mail. Bitte versuchen Sie es später erneut.</h1>');
+        } else {
+            console.log('Email sent:', info.response);
+            res.send('<h1>Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.</h1>');
+        }
+    });
 });
 
-
-
-require('dotenv').config();
+// Server starten
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server läuft auf http://localhost:${PORT}`);
+});

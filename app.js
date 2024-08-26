@@ -16,19 +16,20 @@ app.listen(3000, () => {
 });
 
 const nodemailer = require('nodemailer');
+require('dotenv').config(); // Nur für lokale Umgebungen
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
+        user: process.env.EMAIL_USER, // Greife auf die Umgebungsvariable zu
+        pass: process.env.EMAIL_PASS  // Greife auf das Passwort aus der Umgebungsvariable zu
     }
 });
 
 transporter.sendMail({
     from: process.env.EMAIL_USER,
     to: 'empfaenger@example.com',
-    subject: 'Test Email',
+    subject: 'Test E-Mail',
     text: 'Hallo! Das ist eine Test-E-Mail.'
 }, (error, info) => {
     if (error) {
@@ -37,6 +38,7 @@ transporter.sendMail({
         console.log('Email sent:', info.response);
     }
 });
+
 
 
 require('dotenv').config();

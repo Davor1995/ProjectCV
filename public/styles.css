@@ -140,16 +140,57 @@ body {
     /*margin-left: 400px;*/
     margin-right: 100px;
 }
-
-input {
-    padding-left: 100px;
-    margin-right: 100px;
+/* Stile für das Formular */
+#contactForm {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-textarea {
-    padding-left: 88px;
-    margin-right: 100px;
+/* Flexbox Layout für die Form-Gruppen */
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
 }
+
+/* Stile für die Labels */
+.form-group label {
+    width: 150px; /* Feste Breite für die Labels */
+    text-align: left; /* Text im Label rechtsbündig */
+    margin-right: 15px; /* Abstand zwischen Label und Eingabefeld */
+}
+
+/* Stile für die Eingabefelder und Textarea */
+.form-group input,
+.form-group textarea {
+    width: 57%; /* Eingabefelder nehmen den restlichen Platz ein */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Textarea-Anpassungen */
+.form-group textarea {
+    /*height: 100px; /* Höhe des Textbereichs */
+    resize: vertical; /* Benutzer kann die Höhe ändern */
+}
+
+/* Button-Stil */
+.form-group button {
+    margin-left: 165px; /* Button mit den Feldern ausrichten */
+    padding: 10px 20px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: #34495e;
+}
+
 
 /* Druckspezifische Stile */
 @media print {

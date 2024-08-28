@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'CV.html'));
 });
-
+// Mail Adresse projectcv391@gmail.com / Passwort ProjectCV1++ / App-spezifisch pdxr lxjg gzbe frbv
 // Nodemailer-Einstellungen
 const transporter = nodemailer.createTransport({
     service: 'gmail',

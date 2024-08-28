@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.getElementById('contactForm').addEventListener('submit', function(event) {
     // Überprüfung ob das Formular vollständig ausgefüllt wurde
     var isValid = true;
+    console.log(contactForm);
 
     // Zugriff auf die eingegebenen Daten
     var name = document.getElementById('name').value;

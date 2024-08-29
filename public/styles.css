@@ -4,18 +4,14 @@ body {
     margin: 0 auto;
     padding: 0;
     color: #333;
-    /*background-color: #f4f4f4;*/
+    max-width: 1200px;
     -webkit-print-color-adjust: exact;
 
 }
 
 .container {
     display: flex;
-    max-width: 210mm; /* DIN A4 Breite */
-    /*margin: 0 auto;*/
-    /*background-color: white;
-    /*box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    /*height: 297mm; /* DIN A4 Höhe */
+    max-width: 210mm;
     box-sizing: border-box;
     width: 100%;
 }
@@ -137,11 +133,10 @@ body {
 }
 
 .submitButton button {
-
     margin-top: 40px;
-    /*margin-left: 400px;*/
     margin-right: 100px;
 }
+
 /* Stile für das Formular */
 #contactForm {
     width: 100%;
@@ -160,7 +155,7 @@ body {
 /* Stile für die Labels */
 .form-group label {
     width: 150px; /* Feste Breite für die Labels */
-    text-align: left; /* Text im Label rechtsbündig */
+    text-align: left; /* Text im Label linksbündig */
     margin-right: 15px; /* Abstand zwischen Label und Eingabefeld */
 }
 
@@ -175,7 +170,6 @@ body {
 
 /* Textarea-Anpassungen */
 .form-group textarea {
-    /*height: 100px; /* Höhe des Textbereichs */
     resize: vertical; /* Benutzer kann die Höhe ändern */
 }
 
